@@ -28,6 +28,14 @@ Authentication:
 Contact Us:
 - TC6 — Submit Contact Us form including file upload and alert confirmation
 
+Navigation & Pages
+- TC7 — Verify Test Cases page opens successfully
+
+Products
+- TC8 — Verify All Products page and product detail page
+- TC9 — Verify Search Product
+- TC10 — Verify Subscription in Home Page
+
 Technologies & Key Features:
 - Cypress
 - JavaScript (ES6)
