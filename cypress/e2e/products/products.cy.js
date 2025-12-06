@@ -4,8 +4,7 @@ const ProductsPage = require('../../pages/productsPage');
 
 describe('All Products and product details', () => {
     it('TC8: Verify All Products and product detail page', () => {
-        homePage.open()
-        homePage.elements.heroText().should('be.visible')
+        homePage.openAndVerifyHomePage()
 
         homePage.elements.productsLink().click()
         productsPage.elements.allProductsTitle().should('be.visible')
@@ -25,8 +24,7 @@ describe('All Products and product details', () => {
 
     });
     it('TC9: Search Product', () => {
-        homePage.open()
-        homePage.elements.heroText().should('be.visible')
+        homePage.openAndVerifyHomePage()
 
         homePage.elements.productsLink().click()
         productsPage.elements.allProductsTitle().should('be.visible')

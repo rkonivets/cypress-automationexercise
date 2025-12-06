@@ -13,8 +13,7 @@ describe('Auth - Login', () => {
         const email = `romaqa${timestamp}@test.com`
         const password = `Test1234`
 
-        homePage.open()
-        homePage.elements.heroText().should('be.visible')
+        homePage.openAndVerifyHomePage()
 
         registerPage.open()
         registerPage.startSignup(name, email)
@@ -61,8 +60,7 @@ describe('Auth - Login', () => {
         const email = `romaqa${timestamp}@test.com`
         const password = `Test1234`
 
-        homePage.open()
-        homePage.elements.heroText().should('be.visible')
+        homePage.openAndVerifyHomePage()
 
         registerPage.open()
         registerPage.startSignup(name, email)

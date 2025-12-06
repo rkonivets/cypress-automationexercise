@@ -3,8 +3,7 @@ const contactUsPage = require('../../pages/contactUsPage');
 
 describe('should submit contact us form successfully', () => {
     it('TC6: Contact Us Form', () => {
-        homePage.open()
-        homePage.elements.heroText().should('be.visible')
+        homePage.openAndVerifyHomePage()
 
         homePage.elements.contactUsLink().click()
 

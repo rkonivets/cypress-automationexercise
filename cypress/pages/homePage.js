@@ -8,15 +8,24 @@ class HomePage {
         subscriptionTitle: () => cy.contains('Subscription'),
         yourEmailAddressInput: () => cy.get('[id="susbscribe_email"]'),
         submitSubscriptionButton: () => cy.get('[id="subscribe"]'),
-        successSubscriptionMessage: () => cy.contains('You have been successfully subscribed!')
+        successSubscriptionMessage: () => cy.contains('You have been successfully subscribed!'),
+        cartLink: () => cy.contains('Cart'),
+        firstProductCard: () => cy.get('.features_items .product-image-wrapper').first(),
+        
+
     }
 
     open() {
-        cy.visit('/') 
+        cy.visit('/')
     }
     makeSubscription(email) {
         this.elements.yourEmailAddressInput().type(email)
         this.elements.submitSubscriptionButton().click()
+    }
+
+    openAndVerifyHomePage() {
+        cy.visit('/')
+        this.elements.heroText().should('be.visible')
     }
 }
 

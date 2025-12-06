@@ -7,14 +7,11 @@ describe('User registration', () => {
         const timestamp = Date.now()
         const name = `RomanQA${timestamp}`
         const email = `romanqa${timestamp}@test.com`
-
-        //Open login page/registration
+        
         registerPage.open()
-
-        //Fill out the “New User Signup!” form and click the button.
+       
         registerPage.startSignup(name, email)
-
-        // We check that the next step of registration has opened.
+        
         cy.contains(/enter account information/i).should('be.visible')
     })
 })
