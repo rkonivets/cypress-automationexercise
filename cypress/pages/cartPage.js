@@ -1,10 +1,14 @@
-// cypress/pages/cartPage.js
+
 
 class CartPage {
     elements = {
+        cartPageIsOpened: () => cy.contains('Shopping Cart'),
         cartRows: () => cy.get('#cart_info_table tbody tr'),
         productNames: () => cy.get('#cart_info_table tbody tr .cart_description h4 a'),
-    }
+        procceedToCheckoutButton: () => cy.get('[class="btn btn-default check_out"]'),
+        registerLoginLink: () => cy.get('a').contains('Register / Login'),
+
+    }       
 
     verifyTwoProductsInCart() {
         this.elements.cartRows().should('have.length', 2)

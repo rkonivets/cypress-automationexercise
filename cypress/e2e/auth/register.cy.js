@@ -22,33 +22,30 @@ describe('User registration negativ', () => {
         const name = `RomanQA${timestamp}`
         const email = `romanqa+${timestamp}@test.com`
 
-        //Create new user
+        
         registerPage.open()
         registerPage.startSignup(name, email)
         cy.contains(/enter account information/i).should('be.visible')
 
-        //Have to fill out Account information to pass TC5
+        
         accountInfoPage.fillBasicInfo()
         accountInfoPage.fillAddress()
         accountInfoPage.submit()
-
-        //Check that account is created
-        cy.contains(/account created/i).should('be.visible')
-        cy.contains('Continue').click()
-
-        //Open the login page
+       
+        accountInfoPage.verifyAndContinueCreationAccount()
+               
         cy.visit('/login')
 
         cy.contains('Logged in as').should('be.visible')
 
-        //Log out as registered user
+        
         cy.contains('Logout').click()
         cy.contains('Signup / Login').click()
 
-        //Try to registrate existing email
+        
         registerPage.startSignup('SomeName', email)
 
-        //Chech validation error message
+        
         cy.contains('Email Address already exist').should('be.visible')
     })
 })

@@ -15,6 +15,8 @@ class AccountInfoPage {
     zipcode: () => cy.get('[data-qa="zipcode"]'),
     mobile: () => cy.get('[data-qa="mobile_number"]'),
     createAccountButton: () => cy.get('[data-qa="create-account"]'),
+    accountCreatedInfoMessage: () => cy.contains(/account created/i),
+    continueButton: () => cy.contains('Continue'),
   }
 
   fillBasicInfo(password = 'Test1234') {
@@ -38,6 +40,11 @@ class AccountInfoPage {
 
   submit() {
     this.elements.createAccountButton().click()
+  }
+
+  verifyAndContinueCreationAccount() {
+    this.elements.accountCreatedInfoMessage().should('be.visible')
+    this.elements.continueButton().click()
   }
 }
 

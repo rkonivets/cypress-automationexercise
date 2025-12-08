@@ -11,6 +11,7 @@ class HomePage {
         successSubscriptionMessage: () => cy.contains('You have been successfully subscribed!'),
         cartLink: () => cy.contains('Cart'),
         firstProductCard: () => cy.get('.features_items .product-image-wrapper').first(),
+        loggedInAsUser: (username) => cy.get('a').contains(`Logged in as ${username}`),
         
 
     }
