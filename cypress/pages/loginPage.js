@@ -5,17 +5,15 @@ class LoginPage {
         passwordInput: () => cy.get('[data-qa="login-password"]'),
         loginButton: () => cy.get('[data-qa="login-button"]'),
         loggedInAsText: () => cy.contains('Logged in as'),
-        deleteAccountLink: () => cy.contains('Delete Account'),
-        accountDeletedText: () => cy.contains(/ACCOUNT DELETED!/i),
         errorMessage: () => cy.contains('Your email or password is incorrect!')
 
     }
- 
-    open(){
+
+    open() {
         cy.visit('/login')
     }
 
-    login(email, password){
+    login(email, password) {
         this.elements.emailInput().type(email)
         this.elements.passwordInput().type(password)
         this.elements.loginButton().click()

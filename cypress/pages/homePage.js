@@ -12,6 +12,8 @@ class HomePage {
         cartLink: () => cy.contains('Cart'),
         firstProductCard: () => cy.get('.features_items .product-image-wrapper').first(),
         loggedInAsUser: (username) => cy.get('a').contains(`Logged in as ${username}`),
+        deleteAccountLink: () => cy.contains('Delete Account'),
+        accountDeletedText: () => cy.contains(/ACCOUNT DELETED!/i),
         
 
     }
@@ -27,6 +29,11 @@ class HomePage {
     openAndVerifyHomePage() {
         cy.visit('/')
         this.elements.heroText().should('be.visible')
+    }
+
+    deleteAccountAndVerifyMessage(){
+        this.elements.deleteAccountLink().click()
+        this.elements.accountDeletedText().should('be.visible')
     }
 }
 

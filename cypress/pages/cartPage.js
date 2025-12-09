@@ -7,8 +7,9 @@ class CartPage {
         productNames: () => cy.get('#cart_info_table tbody tr .cart_description h4 a'),
         procceedToCheckoutButton: () => cy.get('[class="btn btn-default check_out"]'),
         registerLoginLink: () => cy.get('a').contains('Register / Login'),
-
-    }       
+        cartIsEmtyText: () => cy.contains('Cart is empty!'),
+        removeProductButton: () => cy.get('[class="cart_quantity_delete"]')
+    }
 
     verifyTwoProductsInCart() {
         this.elements.cartRows().should('have.length', 2)
@@ -37,6 +38,7 @@ class CartPage {
     verifyProductQuantity(expectedQty) {
         cy.get('.cart_quantity').should('contain', expectedQty)
     }
+
 }
 
 module.exports = new CartPage()

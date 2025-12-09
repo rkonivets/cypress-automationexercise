@@ -38,8 +38,7 @@ describe('Auth - Login', () => {
         loginPage.login(email, password)
 
         loginPage.elements.loggedInAsText().should('be.visible')
-        loginPage.elements.deleteAccountLink().click()
-        loginPage.elements.accountDeletedText().should('be.visible')
+        homePage.deleteAccountAndVerifyMessage()
 
     });
 

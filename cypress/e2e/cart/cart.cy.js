@@ -31,4 +31,18 @@ describe('Check Cart functionality', () => {
 
 
     });
+
+    it('TC17: Remove Products From Cart', () => {
+        homePage.openAndVerifyHomePage()
+
+        productsPage.hoverOverFirstProductAndAddToCart()
+        productsPage.clickContinueShoppingButton()
+        
+        homePage.elements.cartLink().click()
+        cartPage.elements.cartPageIsOpened().should('be.visible')
+
+        cartPage.elements.removeProductButton().click()
+        cartPage.elements.cartIsEmtyText().should('be.visible')
+
+    });
 })
