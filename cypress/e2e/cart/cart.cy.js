@@ -37,7 +37,7 @@ describe('Check Cart functionality', () => {
 
         productsPage.hoverOverFirstProductAndAddToCart()
         productsPage.clickContinueShoppingButton()
-        
+
         homePage.elements.cartLink().click()
         cartPage.elements.cartPageIsOpened().should('be.visible')
 
@@ -45,4 +45,28 @@ describe('Check Cart functionality', () => {
         cartPage.elements.cartIsEmtyText().should('be.visible')
 
     });
+
+    it('TC22: Add to cart from Recommended items', () => {
+        homePage.openAndVerifyHomePage()
+
+        cy.scrollTo('bottom')
+
+        homePage.elements.recommendedItemsTitle().should('be.visible')
+
+        homePage.elements.addFirstVisibleRecommended().click()
+
+        productsPage.clickViewCartButton()
+
+        cartPage.elements.cartPageIsOpened().should('be.visible')
+
+        cartPage.verifyCartHasProducts()
+
+
+
+    });
+
+
+
+
+
 })

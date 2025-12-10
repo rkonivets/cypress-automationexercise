@@ -8,12 +8,12 @@ class ProductsPage {
         searchProductInput: () => cy.get('#search_product'),
         searchButton: () => cy.get('#submit_search'),
         searchedProductssTitle: () => cy.contains('Searched Products'),
-        searchresultProduct: () => cy.get('.product-image-wrapper').contains('Soft Stretch Jeans'),
+        searchresultProduct: (productName) => cy.get('.product-image-wrapper').contains(productName),
         viewCartButton: () => cy.contains('View Cart'),
         continueShoppingButton: () => cy.get('.btn.btn-success.close-modal.btn-block'),
         productCards: () => cy.get('.features_items .product-image-wrapper'),
 
-        // elements in the opened product page
+        // Elements in the opened product page
         productName: () => cy.contains('h2', 'Blue Top'),
         productCategory: () => cy.get('.product-information p').contains('Category'),
         productPrice: () => cy.get('.product-information span span'),
@@ -22,10 +22,25 @@ class ProductsPage {
         productBrand: () => cy.get('.product-information p').contains('Brand'),
         productQuantity: () => cy.get('[id="quantity"]'),
         addToCartButton: () => cy.contains('Add to cart'),
+        // WRITE YOUR REVIEW section
+        writeYourReviewTitle: () => cy.contains('Write Your Review'),
+        yourNameInput: () => cy.get('[id="name"]'),
+        emailAddressInput: () => cy.get('[id="email"]'),
+        addReviewHereTextArea: () => cy.get('[id="review"]'),
+        submitButton: () => cy.get('[id="button-review"]'),
+        thankYouForReviewSuccessMessage: () => cy.contains('Thank you for your review.'),
+
+
     }
 
     open() {
         cy.visit('/products')
+    }
+    writeReviewAboutProductAndSubmit() {
+        this.elements.yourNameInput().type('RomaTestName')
+        this.elements.emailAddressInput().type('testroma321@test.com')
+        this.elements.addReviewHereTextArea().type('This is some test review message!')
+        this.elements.submitButton().click()
     }
 
     searchProduct(productName) {

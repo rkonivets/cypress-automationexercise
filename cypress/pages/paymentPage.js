@@ -6,7 +6,9 @@ class PaymentPage {
         expirationMonthInput: () => cy.get('[data-qa="expiry-month"]'),
         expirationYearInput: () => cy.get('[data-qa="expiry-year"]'),
         payAndConfirmOrderButton: () => cy.get('[data-qa="pay-button"]'),
-        orderSuccessfullMessage: () => cy.contains('Congratulations! Your order has been confirmed!')
+        orderSuccessfullMessage: () => cy.contains('Congratulations! Your order has been confirmed!'),
+        downloadInvoiceButton: () => cy.contains('Download Invoice'),
+        continueButton: () => cy.contains('Continue'),
     }
 
     enterPaymentDetailsAndConfirm() {
@@ -18,6 +20,23 @@ class PaymentPage {
         this.elements.payAndConfirmOrderButton().click()
 
     }
+
+    verifyInvoiceDownloaded() {
+        const invoicePath = 'cypress/downloads/invoice.txt'
+
+        cy.readFile(invoicePath, { timeout: 15000 }).should('exist')
+    }
+
+    deleteInvoiceFile() {
+  const invoicePath = 'cypress/downloads/invoice.txt'
+  cy.then(() => {
+    if (Cypress.fs.existsSync(invoicePath)) {
+      Cypress.fs.unlinkSync(invoicePath)
+    }
+  })
+}
+
+
 }
 
 module.exports = new PaymentPage

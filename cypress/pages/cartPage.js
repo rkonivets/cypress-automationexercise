@@ -8,8 +8,19 @@ class CartPage {
         procceedToCheckoutButton: () => cy.get('[class="btn btn-default check_out"]'),
         registerLoginLink: () => cy.get('a').contains('Register / Login'),
         cartIsEmtyText: () => cy.contains('Cart is empty!'),
-        removeProductButton: () => cy.get('[class="cart_quantity_delete"]')
+        removeProductButton: () => cy.get('[class="cart_quantity_delete"]'),
+        productIsDisplayedInCartPage: (productName) => cy.get('.cart_description').contains(productName),
+        cartTable: () => cy.get('#cart_info_table'),
+        cartTableRows: () => cy.get('#cart_info_table tbody tr'),
     }
+
+    open() {
+        cy.visit('/view_cart')
+    }
+    verifyCartHasProducts() {
+    this.elements.cartTable().should('be.visible')
+    
+  }
 
     verifyTwoProductsInCart() {
         this.elements.cartRows().should('have.length', 2)

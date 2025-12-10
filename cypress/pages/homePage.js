@@ -14,7 +14,9 @@ class HomePage {
         loggedInAsUser: (username) => cy.get('a').contains(`Logged in as ${username}`),
         deleteAccountLink: () => cy.contains('Delete Account'),
         accountDeletedText: () => cy.contains(/ACCOUNT DELETED!/i),
-        
+        recommendedItemsTitle: () => cy.contains('recommended items'),
+        addFirstVisibleRecommended: () =>
+            cy.get('.recommended_items a.add-to-cart:visible').first()
 
     }
 
@@ -31,7 +33,7 @@ class HomePage {
         this.elements.heroText().should('be.visible')
     }
 
-    deleteAccountAndVerifyMessage(){
+    deleteAccountAndVerifyMessage() {
         this.elements.deleteAccountLink().click()
         this.elements.accountDeletedText().should('be.visible')
     }
