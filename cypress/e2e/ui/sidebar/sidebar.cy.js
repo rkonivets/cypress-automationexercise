@@ -1,5 +1,5 @@
-const homePage = require('../../pages/homePage');
-const sidebarPage = require('../../pages/sidebarPage')
+const homePage = require('../../../pages/homePage');
+const sidebarPage = require('../../../pages/sidebarPage')
 
 
 describe('Verify sidebar CATEGORY and BRANDS', () => {

@@ -5,7 +5,7 @@ class HomePage {
         contactUsLink: () => cy.contains('Contact us'),
         testCasesLink: () => cy.contains('Test Cases'),
         productsLink: () => cy.contains(' Products'),
-        subscriptionTitle: () => cy.contains('Subscription'),
+        subscriptionTitle: () => cy.contains(/subscription/i),
         yourEmailAddressInput: () => cy.get('[id="susbscribe_email"]'),
         submitSubscriptionButton: () => cy.get('[id="subscribe"]'),
         successSubscriptionMessage: () => cy.contains('You have been successfully subscribed!'),
@@ -16,13 +16,23 @@ class HomePage {
         accountDeletedText: () => cy.contains(/ACCOUNT DELETED!/i),
         recommendedItemsTitle: () => cy.contains('recommended items'),
         addFirstVisibleRecommended: () =>
-            cy.get('.recommended_items a.add-to-cart:visible').first()
+            cy.get('.recommended_items a.add-to-cart:visible').first(),
+        scrollUpArrowButton: () => cy.get('[class="fa fa-angle-up"]'),
+
 
     }
 
     open() {
         cy.visit('/')
     }
+
+    scrollToTheBottom() {
+        cy.scrollTo('bottom')
+    }
+    scrollToTheTop() {
+        cy.scrollTo('top')
+    }
+
     makeSubscription(email) {
         this.elements.yourEmailAddressInput().type(email)
         this.elements.submitSubscriptionButton().click()

@@ -1,5 +1,5 @@
-const homePage = require('../../pages/homePage');
-const testCasesPage = require('../../pages/testCasesPage');
+const homePage = require('../../../pages/homePage');
+const testCasesPage = require('../../../pages/testCasesPage');
 
 
 describe ('Test Cases page is opened', () => {

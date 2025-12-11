@@ -1,5 +1,5 @@
-const homePage = require('../../pages/homePage')
-const contactUsPage = require('../../pages/contactUsPage');
+const homePage = require('../../../pages/homePage')
+const contactUsPage = require('../../../pages/contactUsPage');
 
 describe('should submit contact us form successfully', () => {
     it('TC6: Contact Us Form', () => {

@@ -1,6 +1,6 @@
-const cartPage = require("../../pages/cartPage");
-const homePage = require("../../pages/homePage");
-const productsPage = require("../../pages/productsPage");
+const cartPage = require("../../../pages/cartPage");
+const homePage = require("../../../pages/homePage");
+const productsPage = require("../../../pages/productsPage");
 
 describe('Check Cart functionality', () => {
     it('TC12: Add Products in Cart', () => {

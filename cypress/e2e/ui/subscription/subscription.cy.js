@@ -1,4 +1,4 @@
-const homePage = require('../../pages/homePage')
+const homePage = require('../../../pages/homePage')
 
 describe('Check subscription functionality', () => {
     it('TC10: Verify Subscription in home page', () => {

@@ -1,5 +1,5 @@
-const registerPage = require('../../pages/registerPage')
-const accountInfoPage = require('../../pages/accountInfoPage')
+const registerPage = require('../../../pages/registerPage')
+const accountInfoPage = require('../../../pages/accountInfoPage')
 
 describe('User registration', () => {
     it('TC1: Register new user', () => {
@@ -13,6 +13,7 @@ describe('User registration', () => {
         registerPage.startSignup(name, email)
         
         cy.contains(/enter account information/i).should('be.visible')
+        
     })
 })
 

@@ -1,8 +1,8 @@
 
-const registerPage = require('../../pages/registerPage')
-const homePage = require('../../pages/homePage')
-const loginPage = require('../../pages/loginPage')
-const accountInfoPage = require('../../pages/accountInfoPage')
+const registerPage = require('../../../pages/registerPage')
+const homePage = require('../../../pages/homePage')
+const loginPage = require('../../../pages/loginPage')
+const accountInfoPage = require('../../../pages/accountInfoPage')
 
 
 

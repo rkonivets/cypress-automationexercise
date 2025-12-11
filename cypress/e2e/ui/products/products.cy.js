@@ -1,8 +1,8 @@
-const cartPage = require('../../pages/cartPage');
-const homePage = require('../../pages/homePage');
-const productsPage = require('../../pages/productsPage');
-const registerPage = require('../../pages/registerPage');
-const accountInfoPage = require('../../pages/accountInfoPage');
+const cartPage = require('../../../pages/cartPage');
+const homePage = require('../../../pages/homePage');
+const productsPage = require('../../../pages/productsPage');
+const registerPage = require('../../../pages/registerPage');
+const accountInfoPage = require('../../../pages/accountInfoPage');
 
 
 describe('All Products and product details', () => {
