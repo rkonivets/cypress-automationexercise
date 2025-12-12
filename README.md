@@ -136,12 +136,12 @@ Realistic positive and negative scenarios
 How to Run the Tests
 Install dependencies:
 
-bash
+
 Копировать код
 npm install
 Open Cypress Test Runner (UI mode):
 
-bash
+
 Копировать код
 npx cypress open
 Run all tests in headless mode:
