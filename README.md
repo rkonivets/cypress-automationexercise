@@ -19,7 +19,7 @@ and **REST API testing**, with a clean structure, readable tests, and realistic 
 
 ## Project Structure
 
-```text
+```bash
 cypress/
   e2e/
     api/
@@ -47,8 +47,12 @@ cypress/
 cypress.config.js
 package.json
 README.md
-Implemented UI Test Cases
-Authentication
+```
+
+### Implemented UI Test Cases
+
+**Authentication**
+
 TC1 — Register a new user
 
 TC2 — Login with correct email and password
@@ -59,26 +63,32 @@ TC4 — Logout user
 
 TC5 — Register with an existing email (negative case)
 
-Contact Us
+**Contact Us**
+
 TC6 — Submit Contact Us form including file upload and alert confirmation
 
-Navigation & Pages
+**Navigation & Pages**
+
 TC7 — Verify Test Cases page opens successfully
 
-Products
+**Products**
+
 TC8 — Verify All Products page and product detail page
 
 TC9 — Verify Search Product
 
 TC10 — Verify Subscription in Home Page
 
-Functional Scenarios
+**Functional Scenarios**
+
 TC25 — Verify Scroll Down functionality
 
 TC26 — Verify Scroll Up functionality (with and without arrow button)
 
-Implemented API Test Cases
-Products & Brands API
+ ### Implemented API Test Cases
+
+**Products & Brands API**
+
 API 1 — GET All Products List
 
 API 2 — POST to All Products List (method not supported)
@@ -87,12 +97,14 @@ API 3 — GET All Brands List
 
 API 4 — PUT/POST to All Brands List (method not supported)
 
-Search Product API
+**Search Product API**
+
 API 5 — POST Search Product (positive case)
 
 API 6 — POST Search Product without search_product parameter (negative case)
 
-Verify Login API
+**Verify Login API**
+
 API 7 — Verify Login with valid details
 
 API 8 — Verify Login without email parameter
@@ -101,7 +113,8 @@ API 9 — DELETE Verify Login (method not supported)
 
 API 10 — Verify Login with invalid details
 
-User Account API (Full CRUD Flow)
+**User Account API (Full CRUD Flow)**
+
 API 11 — POST Create/Register User Account
 
 API 12 — DELETE User Account
@@ -110,44 +123,47 @@ API 13 — PUT Update User Account
 
 API 14 — GET User Details by Email
 
-User data is generated dynamically using timestamps to ensure test isolation and repeatability.
 
-Technologies & Key Features
-Cypress
+### Technologies & Key Features
 
-JavaScript (ES6)
+- Cypress 15.x (tested with 15.7.1)
 
-UI + API testing in one framework
+- Node.js 22.x (tested with 22.14.0)
 
-Page Object Model (POM)
+- JavaScript (ES6)
 
-REST API testing with cy.request
+- UI + API testing in one framework
 
-Dynamic test data generation
+- Page Object Model (POM)
 
-File upload testing using selectFile
+- REST API testing with cy.request
 
-Alert/confirmation handling
+- Dynamic test data generation
 
-Clean, readable test structure
+- File upload testing using selectFile
 
-Realistic positive and negative scenarios
+- Alert/confirmation handling
 
-How to Run the Tests
-Install dependencies:
+- Clean, readable test structure
 
+- Realistic positive and negative scenarios
 
-Копировать код
+### How to Run the Tests
+
+**Install dependencies:**
+
 npm install
-Open Cypress Test Runner (UI mode):
 
+**Open Cypress Test Runner (UI mode):**
 
-Копировать код
 npx cypress open
-Run all tests in headless mode:
 
-bash
-Копировать код
+**Run all tests in headless mode:**
+
 npx cypress run
-Author
-Roman Konivets — QA Engineer
+
+
+
+### Author
+
+**Roman Konivets** — QA Engineer
